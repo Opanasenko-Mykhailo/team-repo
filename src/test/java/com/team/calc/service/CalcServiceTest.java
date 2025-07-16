@@ -62,4 +62,11 @@ class CalcServiceTest {
 
         assertEquals("Division by zero", exception.getMessage());
     }
+
+    @Test
+    void add() {
+        int actual = calcService.add(2,3);
+
+        assertEquals(5, actual);
+    }
 }
