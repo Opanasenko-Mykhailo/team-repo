@@ -17,4 +17,8 @@ public class CalcService {
     public Integer multiply(Integer a, Integer b){
         return a * b;
     }
+
+    public void hello(){
+        System.out.println("Hello World");
+    }
 }
