@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CalcServiceTest {
 
-    private final CalcService calcService = new CalcService();
+    private final CalcService service = new CalcService();
 
     @ParameterizedTest
     @CsvSource({
@@ -18,7 +18,7 @@ class CalcServiceTest {
             "100, 25, 75"
     })
     void testSubtract(Integer a, Integer b, Integer expected) {
-        Integer result = calcService.subtract(a, b);
-        assertEquals(expected, result, () -> a + " - " + b + " should equal " + expected);
+        Integer actual = service.subtract(a, b);
+        assertEquals(expected, actual, () -> a + " - " + b + " should equal " + expected);
     }
 }
