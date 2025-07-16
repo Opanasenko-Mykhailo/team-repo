@@ -9,6 +9,33 @@ class CalcServiceTest {
     private final CalcService calcService = new CalcService();
 
     @Test
+    void testMultiplyPositiveNumbers() {
+        assertEquals(20, calcService.multiply(4, 5));
+    }
+
+    @Test
+    void testMultiplyWithZero() {
+        assertEquals(0, calcService.multiply(7, 0));
+        assertEquals(0, calcService.multiply(0, 7));
+    }
+
+    @Test
+    void testMultiplyNegativeNumbers() {
+        assertEquals(15, calcService.multiply(-3, -5));
+    }
+
+    @Test
+    void testMultiplyPositiveAndNegative() {
+        assertEquals(-12, calcService.multiply(3, -4));
+    }
+
+    @Test
+    void testMultiplyWithNull() {
+        assertThrows(NullPointerException.class, () -> calcService.multiply(null, 5));
+        assertThrows(NullPointerException.class, () -> calcService.multiply(5, null));
+    }
+
+    @Test
     void testDivideWithValidNumbers() {
         double result = calcService.divide(10, 2);
 
